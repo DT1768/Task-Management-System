@@ -10,7 +10,7 @@ public class Dashboard extends JFrame implements ActionListener {
     int role, department;
     String userId;
 
-    JButton createUser,createRole,createDepartment, taskManager, notifications, signOut;
+    JButton createUser,createDepartment, taskManager, notifications, signOut;
     JLabel welcome;
 
     public Dashboard(int role, int department, String userId) {
@@ -19,8 +19,6 @@ public class Dashboard extends JFrame implements ActionListener {
         this.userId = userId;
 
         Border border = BorderFactory.createLineBorder(new Color(0x000000),5);
-        Font font =  new Font("Monospaced",Font.BOLD,25);
-        Color color = new Color(0xFFFFFF);
 
         welcome = new JLabel();
         welcome.setText( userId +"'s Dashboard");
@@ -37,30 +35,22 @@ public class Dashboard extends JFrame implements ActionListener {
         createUser = new JButton();
         createUser.setBounds (25,60,200,50);
         createUser.addActionListener(this);
-        createUser.setText("Create User");
+        createUser.setText("Employee Manager");
         createUser.setFocusable(false);
         createUser.setFont(new Font("Comic Sans",Font.BOLD,12));
         createUser.setForeground(Color.BLACK);
 
-        createRole = new JButton();
-        createRole.setBounds (250,60,200,50);
-        createRole.addActionListener(this);
-        createRole.setText("Create Role");
-        createRole.setFocusable(false);
-        createRole.setFont(new Font("Comic Sans",Font.BOLD,12));
-        createRole.setForeground(Color.BLACK);
-
 
         createDepartment = new JButton();
-        createDepartment.setBounds (25,120,200,50);
+        createDepartment.setBounds (250,60,200,50);
         createDepartment.addActionListener(this);
-        createDepartment.setText("Create Department");
+        createDepartment.setText("Department Manager");
         createDepartment.setFocusable(false);
         createDepartment.setFont(new Font("Comic Sans",Font.BOLD,12));
         createDepartment.setForeground(Color.BLACK);
 
         taskManager = new JButton();
-        taskManager.setBounds (250,120,200,50);
+        taskManager.setBounds (150,120,200,50);
         taskManager.addActionListener(this);
         taskManager.setText("Task Manager");
         taskManager.setFocusable(false);
@@ -93,7 +83,6 @@ public class Dashboard extends JFrame implements ActionListener {
         this.add(welcome);
         if(role == 1){
             this.add(createUser);
-            this.add(createRole);
             this.add(createDepartment);
         }
         this.add(taskManager);
@@ -104,19 +93,16 @@ public class Dashboard extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == createUser){
-            new CreateUser();
-        }
-        else if(e.getSource() == createRole){
-            new CreateRole();
+            new EmployeeManager(role,department,userId);
         }
         else if(e.getSource() == createDepartment){
-            new CreateDepartment();
+            new DepartmentManager(role,department,userId);
         }
         else if(e.getSource() == taskManager){
             new TaskManager(role, department, userId);
         }
         else if(e.getSource() == notifications){
-            // notifications
+            new Notifications(role, department, userId);
         }
         else if(e.getSource() == signOut){
             new SignInPage();
