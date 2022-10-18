@@ -86,7 +86,9 @@ public class Dashboard extends JFrame implements ActionListener {
             this.add(createDepartment);
         }
         this.add(taskManager);
-        this.add(notifications);
+        if(role != 3){
+            this.add(notifications);
+        }
         this.add(signOut);
     }
 

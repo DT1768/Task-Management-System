@@ -397,7 +397,6 @@ public class TaskManager extends JFrame implements ItemListener,ActionListener, 
                 update();
                 fetch();
                 reset();
-                successMessage("Task Updated Successfully");
             }
         }
         else if(e.getSource() == delete){
@@ -958,6 +957,7 @@ public class TaskManager extends JFrame implements ItemListener,ActionListener, 
                 System.out.println(e);
                 errorMessage("SQL Error.");
             }
+            successMessage("task updated successfully.");
         }
         else if(role == 3){
             int i = -1;
@@ -988,6 +988,7 @@ public class TaskManager extends JFrame implements ItemListener,ActionListener, 
                     ps.execute();
                     addTask(userID);
                     notifications("Task assigned: "+ name);
+                    successMessage("task updated successfully.");
                 } catch (Exception e) {
                     System.out.println(e);
                     errorMessage("SQL Error.");
@@ -1002,10 +1003,14 @@ public class TaskManager extends JFrame implements ItemListener,ActionListener, 
                     ps.setInt(3, i);
                     ps.execute();
                     notifications("Task assigned: "+ name);
+                    successMessage("task updated successfully.");
                 } catch (Exception e) {
                     System.out.println(e);
                     errorMessage("SQL Error.");
                 }
+            }
+            else{
+                errorMessage("can't update task.");
             }
         }
     }
