@@ -93,11 +93,11 @@ General Manager have all permission to create, modify, delete tasks in all depar
 	
 	`CREATE TABLE notifications (date DATETIME DEFAULT CURRENT_TIMESTAMP,id int PRIMARY KEY NOT NULL AUTO_INCREMENT,department int, actor int,action varchar(200),FOREIGN KEY (actor) REFERENCES employees(id),FOREIGN KEY (department) REFERENCES department(id));`
 	
-	go to privileges create a new localhost user with password.
+	go to privileges in phpMyAdmin from XAMPP server MySQL admin create a new localhost user with password.
 	
 	i.e I have user - dhruv and password - 1234
 	
-	Give database access to that user.
+	## Give database access to that user.
 	
 6) Configuring database path:
 
