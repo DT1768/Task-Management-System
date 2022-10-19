@@ -100,13 +100,16 @@ General Manager have all permission to create, modify, delete tasks in all depar
 	Give database access to that user.
 	
 6) Configuring database path:
+
 	Go to `connection.java` file:
-		In line 11:
+	
+	In line 11:
+		
 		`Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cts", "dhruv", "1234");`
 		
-		Change:
+	Change:
 		`Connection con = DriverManager.getConnection("jdbc:mysql://localhost:<your MySQL port (From XAMPP server)>/<database name>", "<User id>", "<password>");`
-		OR
+	OR
 		`Connection con = DriverManager.getConnection("jdbc:mysql://localhost:<your MySQL port (From XAMPP server)>/<database name>");`
 
 7)Go to Demo.java and run the main method.
