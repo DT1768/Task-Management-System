@@ -41,7 +41,7 @@ General Manager have all permission to create, modify, delete tasks in all depar
 
 	a) download project and extract zip file.
 	
-	b) open folder as a project in IntelliJ IDEA.
+	b) open folder as a project in IntelliJ IDEA. (src/com/project)
 	
 	c) extract jar file from java MYSQL connector from step-3.
 	
