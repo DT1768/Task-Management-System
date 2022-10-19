@@ -97,7 +97,7 @@ General Manager have all permission to create, modify, delete tasks in all depar
 	
 	i.e I have user - dhruv and password - 1234
 	
-	## Give database access to that user.
+	### Give database access to that user.
 	
 6) Configuring database path:
 
