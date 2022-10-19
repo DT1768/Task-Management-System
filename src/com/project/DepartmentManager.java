@@ -124,7 +124,7 @@ public class DepartmentManager extends JFrame implements ActionListener {
         }
         else if(e.getSource() == back){
             this.dispose();
-            new TaskManager(role,department,userId);
+            new Dashboard(role,department,userId);
         }
         else if(e.getSource()  == logout){
             this.dispose();
