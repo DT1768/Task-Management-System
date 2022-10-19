@@ -41,7 +41,7 @@ General Manager have all permission to create, modify, delete tasks in all depar
 
 	a) download project and extract zip file.
 	
-	b) open folder as a project in IntelliJ IDEA.
+	b) open folder as a project in IntelliJ IDEA. (src/com/project)
 	
 	c) extract jar file from java MYSQL connector from step-3.
 	
@@ -93,4 +93,23 @@ General Manager have all permission to create, modify, delete tasks in all depar
 	
 	`CREATE TABLE notifications (date DATETIME DEFAULT CURRENT_TIMESTAMP,id int PRIMARY KEY NOT NULL AUTO_INCREMENT,department int, actor int,action varchar(200),FOREIGN KEY (actor) REFERENCES employees(id),FOREIGN KEY (department) REFERENCES department(id));`
 	
-6) Go to Demo.java and run the main method.
+	go to privileges in phpMyAdmin from XAMPP server MySQL admin create a new localhost user with password.
+	
+	i.e I have user - dhruv and password - 1234
+	
+	### Give database access to that user.
+	
+6) Configuring database path:
+
+	Go to `connection.java` file:
+	
+	In line 11:
+		
+		`Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cts", "dhruv", "1234");`
+		
+	Change:
+		`Connection con = DriverManager.getConnection("jdbc:mysql://localhost:<your MySQL port (From XAMPP server)>/<database name>", "<User id>", "<password>");`
+	OR
+		`Connection con = DriverManager.getConnection("jdbc:mysql://localhost:<your MySQL port (From XAMPP server)>/<database name>");`
+
+7)Go to Demo.java and run the main method.
