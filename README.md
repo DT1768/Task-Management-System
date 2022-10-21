@@ -112,4 +112,4 @@ General Manager have all permission to create, modify, delete tasks in all depar
 	OR
 		`Connection con = DriverManager.getConnection("jdbc:mysql://localhost:<your MySQL port (From XAMPP server)>/<database name>");`
 
-7)Go to Demo.java and run the main method.
+7) Go to Demo.java and run the main method.
